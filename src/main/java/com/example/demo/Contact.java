@@ -8,6 +8,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Contact {
+	
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -26,11 +27,13 @@ public class Contact {
 
     }
 
-    public Contact(String name) {
-        this.name = name;
-    }
 
-    
+    public Contact(String name, String email) {
+		super();
+		this.name = name;
+		this.email = email;
+	}
+
     @Column(unique = true)
     private String email;
     
