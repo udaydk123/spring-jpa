@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,7 +30,25 @@ public class Contact {
         this.name = name;
     }
 
+    
+    @Column(unique = true)
+    private String email;
+    
     /**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	/**
      * @return the name
      */
     public String getName() {
